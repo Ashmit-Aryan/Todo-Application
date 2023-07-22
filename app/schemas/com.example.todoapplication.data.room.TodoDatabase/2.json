@@ -1,0 +1,70 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "bfb702e2acf2e65bb3e8340e38dc28c2",
+    "entities": [
+      {
+        "tableName": "Todo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`color` INTEGER NOT NULL, `todo` TEXT NOT NULL, `priority` INTEGER NOT NULL, `isDone` INTEGER NOT NULL, `s_d` TEXT NOT NULL, `date` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "color",
+            "columnName": "color",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "todo",
+            "columnName": "todo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "priority",
+            "columnName": "priority",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isDone",
+            "columnName": "isDone",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shortDescription",
+            "columnName": "s_d",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateAdded",
+            "columnName": "date",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bfb702e2acf2e65bb3e8340e38dc28c2')"
+    ]
+  }
+}
